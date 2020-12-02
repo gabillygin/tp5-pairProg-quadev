@@ -11,10 +11,17 @@ def hello_prenom(input):
                 sortie_maj += ', ' + prenom
             else:
                 prenom = prenom.capitalize()
-                sortie += ', ' + prenom
+                if prenom == input[-1]:
+                    sortie += ' and ' + prenom
+                else:
+                    sortie += ', ' + prenom
+    return (sortie,sortie_maj)
 
-    if sortie_maj != "HELLO":
-        if sortie != "Hello" and sortie != "Hello, my friend":
-            return sortie + '. AND ' + sortie_maj + ' !'
-        return sortie_maj + '!'
-    return sortie
+
+def sortie_bienvenue(input):
+    sortie = hello_prenom(input)
+    if sortie[1] != "HELLO":
+        if sortie[0] != "Hello" and sortie[0] != "Hello, my friend":
+            return sortie[0] + '. AND ' + sortie[1] + ' !'
+        return sortie[1] + '!'
+    return sortie[0]
