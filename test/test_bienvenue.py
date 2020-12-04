@@ -1,7 +1,6 @@
 def test_sortie_bienvenue_normal():
     from bienvenue.welcome import sortie_bienvenue as hp
     assert hp('gabriel') == "Hello, Gabriel"
-    assert hp('   ') == 'Hello, my friend'
     assert hp('gabriel  , Nicolas  ') == "Hello, Gabriel and Nicolas"
 
 
@@ -19,12 +18,13 @@ def test_sortie_bienvenue_maj():
 def test_sortie_bienvenue_normal_maj():
     from bienvenue.welcome import sortie_bienvenue as hp
     assert hp('gabriel,NICOLAS') == "Hello, Gabriel. AND HELLO, NICOLAS !"
-    #ISSUE / ! \
-    #assert hp('gabriel, nicolas,NICOLAS') == "Hello, Gabriel, Nicolas. AND HELLO, NICOLAS !"
+    assert hp('gabriel, nicolas,NICOLAS') == "Hello, Gabriel, Nicolas. AND HELLO, NICOLAS !"
+
 
 def test_sortie_bienvenue_and():
     from bienvenue.welcome import sortie_bienvenue as hp
     assert hp('gabriel,Nicolas') == "Hello, Gabriel and Nicolas"
+
 
 def test_sortie_bienvenue_non_affiche():
     from bienvenue.welcome import sortie_bienvenue as hp
@@ -53,4 +53,3 @@ def test_sortie_bienvenue_yoda():
     assert hp('gabriel,yoda') == "Gabriel and Yoda, Hello"
     assert hp('yoda') == "Yoda, Hello"
     assert hp('yoda,gabriel,nicolas,denis,françouise,papy') == "World, Hello"
-

@@ -63,10 +63,6 @@ def traitement_input(input):
             sortie_maj += ', ' + prenom
         else:
             if prenom == input[-1] and len(input) != 1:
-                if nb_prenom_maj[input.index(prenom)] > 1:
-                    prenom = prenom.strip()
-                    sortie += ' and ' + prenom.capitalize()
-                else:
                     prenom = prenom.strip()
                     sortie += ' and ' + prenom.capitalize()
             else:
